@@ -6,64 +6,174 @@
   <title>SAVA PHOTO — портфолио</title>
 
   <style>
+    * {box-sizing:border-box}
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      color: #222;
-      text-align: center;
+      margin:0; font-family:Arial, sans-serif;
+      background:#fafafa; color:#222;
     }
+
     header {
-      background: #000;
-      color: #fff;
-      padding: 20px;
+      background:#000; color:#fff;
+      padding:18px; text-align:center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: 1px;
+    nav {
+      background:#ededed; display:flex;
+      flex-wrap:wrap; justify-content:center;
+      gap:8px; padding:10px;
     }
-    header p {
-      margin: 5px 0 0;
-      font-size: 14px;
-      opacity: 0.8;
+    nav button {
+      background:#fff; border:1px solid #ccc;
+      border-radius:8px; padding:6px 14px;
+      cursor:pointer; font-size:15px;
+      transition:.2s;
     }
+    nav button:hover {
+      background:#000; color:#fff;
+    }
+
+    .section {
+      display:none; padding:10px;
+    }
+    .section.active {display:block}
+
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px;
+      display:flex; flex-wrap:wrap;
+      justify-content:center; gap:10px;
     }
     .gallery img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      width:180px; height:180px;
+      object-fit:cover; border-radius:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,.2);
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+
+    /* Отзывы */
+    #reviews-form {
+      display:flex; flex-direction:column;
+      align-items:center; gap:10px; margin-top:15px;
+    }
+    textarea {
+      width:90%; max-width:400px; height:80px;
+      padding:10px; border-radius:8px;
+      border:1px solid #bbb;
+    }
+    #reviews-list {
+      padding:0; list-style:none; max-width:400px; margin:auto;
+    }
+    #reviews-list li {
+      background:#fff; margin:6px 0;
+      padding:8px 12px; border-radius:8px;
+      border:1px solid #ddd;
+      position:relative;
+    }
+    #reviews-list button {
+      position:absolute; right:8px; top:6px;
+      border:none; background:none; color:red;
+      cursor:pointer;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>SAVA PHOTO</h1>
-    <p>портреты • авто • пейзажи</p>
+    <h1>SAVA PHOTO</h1>
+    <p>портреты • авто • пейзажи 2025</p>
   </header>
 
-  <section class="gallery">
-    <img src="photo1.jpg" alt="Портрет">
-    <img src="photo2.jpg" alt="Репортаж">
-    <img src="photo3.jpg" alt="Авто">
-    <img src="photo4.jpg" alt="Пейзаж">
+  <nav>
+    <button onclick="openSection('portraits')">Портреты</button>
+    <button onclick="openSection('events')">Репортаж</button>
+    <button onclick="openSection('cars')">Авто и спорт</button>
+    <button onclick="openSection('landscapes')">Пейзажи</button>
+    <button onclick="openSection('reviews')">Отзывы</button>
+  </nav>
+
+  <!--‑‑ Секции с фото ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
+  <section id="portraits" class="section active">
+    <h2>Портретная съёмка</h2>
+    <div class="gallery">
+    <img src="p1.jpg" alt="">
+    <img src="p2.jpg" alt="">
+    <img src="p3.jpg" alt="">
+    <img src="p4.jpg" alt="">
+    <img src="photo_2025-12-04_07-56-48.jpg" alt="">
+    <img src="photo_2025-12-04_07-56-49.jpg" alt="">
+   
+   </div>
   </section>
 
-  <p style="padding-bottom:20px; font-size:14px; color:#666;">
-    © SAVA PHOTO — 2025
-  </p>
+  <section id="events" class="section">
+    <h2>Репортажи и концерты</h2>
+    <div class="gallery">
+      <img src="e1.jpg" alt="">
+    </div>
+  </section>
+
+  <section id="cars" class="section">
+    <h2>Авто и спорт</h2>
+    <div class="gallery">
+    <img src="photo_2025-12-04_08-05-37 (2).jpg" alt="">
+    <img src="photo_2025-12-04_08-05-38 (2).jpg" alt="">
+    <img src="photo_2025-12-04_08-05-39.jpg" alt="">
+
+       </div>
+  </section>
+
+  <section id="landscapes" class="section">
+    <h2>Пейзажи и архитектура</h2>
+    <div class="gallery">
+      <img src="photo_2025-12-04_08-04-47.jpg" alt="">
+<img src="photo_2025-12-04_08-04-48 (2).jpg" alt="">
+        <img src="photo_2025-12-04_08-05-39.jpg" alt="">
+
+    </div>
+  </section>
+
+  <!--‑‑ Раздел отзывов ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
+  <section id="reviews" class="section">
+    <h2>Отзывы</h2>
+    <form id="reviews-form">
+      <textarea id="review-text" placeholder="Оставьте отзыв анонимно..."></textarea>
+      <button type="button" onclick="addReview()">Отправить</button>
+    </form>
+    <ul id="reviews-list"></ul>
+  </section>
+
+  <script>
+    function openSection(id){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // отзывы в localStorage
+    const listEl = document.getElementById('reviews-list');
+    let reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+    renderReviews();
+
+    function addReview(){
+      const txt = document.getElementById('review-text');
+      if(!txt.value.trim()) return;
+      reviews.push(txt.value.trim());
+      txt.value = '';
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+      renderReviews();
+    }
+
+    function renderReviews(){
+      listEl.innerHTML = '';
+      reviews.forEach((r,i)=>{
+        const li = document.createElement('li');
+        li.textContent = r;
+        const del = document.createElement('button');
+        del.textContent = '×';
+        del.onclick=()=>{
+          reviews.splice(i,1);
+          localStorage.setItem('reviews', JSON.stringify(reviews));
+          renderReviews();
+        };
+        li.appendChild(del);
+        listEl.appendChild(li);
+      });
+    }
+  </script>
 </body>
 </html>
