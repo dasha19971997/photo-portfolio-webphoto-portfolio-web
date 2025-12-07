@@ -87,47 +87,57 @@
     <button onclick="openSection('reviews')">Отзывы</button>
   </nav>
 
-  <!--‑‑ Секции с фото ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
+  <!--‑‑‑‑‑‑‑‑‑‑‑‑ ПОРТРЕТЫ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
   <section id="portraits" class="section active">
     <h2>Портретная съёмка</h2>
     <div class="gallery">
-    <img src="p1.jpg" alt="">
-    <img src="p2.jpg" alt="">
-    <img src="p3.jpg" alt="">
-    <img src="p4.jpg" alt="">
-    <img src="photo_2025-12-04_07-56-48.jpg" alt="">
-    <img src="photo_2025-12-04_07-56-49.jpg" alt="">
-   
-   </div>
+      <img src="photo1 (3).jpg" alt="Портрет 1">
+      <img src="photo2.jpg" alt="Портрет 2">
+      <img src="photo3.jpg" alt="Портрет 3">
+      <img src="p5.jpg" alt="Портрет 4">
+      <img src="p6.jpg" alt="Портрет 5">
+    </div>
   </section>
 
+  <!--‑‑‑‑‑‑‑‑‑‑‑‑ РЕПОРТАЖИ / КОНЦЕРТЫ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
   <section id="events" class="section">
     <h2>Репортажи и концерты</h2>
     <div class="gallery">
-      <img src="e1.jpg" alt="">
+      <img src="p7.jpg" alt="Репортаж 1">
+      <img src="p8.jpg" alt="Репортаж 2">
     </div>
   </section>
 
+  <!--‑‑‑‑‑‑‑‑‑‑‑‑ АВТО / СПОРТ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
   <section id="cars" class="section">
     <h2>Авто и спорт</h2>
     <div class="gallery">
-    <img src="photo_2025-12-04_08-05-37 (2).jpg" alt="">
-    <img src="photo_2025-12-04_08-05-38 (2).jpg" alt="">
-    <img src="photo_2025-12-04_08-05-39.jpg" alt="">
-
-       </div>
-  </section>
-
-  <section id="landscapes" class="section">
-    <h2>Пейзажи и архитектура</h2>
-    <div class="gallery">
-      <img src="photo_2025-12-04_08-04-47.jpg" alt="">
-<img src="photo_2025-12-04_08-04-48 (2).jpg" alt="">
-        <img src="photo_2025-12-04_08-05-39.jpg" alt="">
-
+      <img src="p1.jpg" alt="Авто 1">
+      <img src="p11.jpg" alt="Авто 2">
+      <img src="p12.jpg" alt="Авто 3">
+      <img src="p13.jpg" alt="Авто 4">
     </div>
   </section>
 
+  <!--‑‑‑‑‑‑‑‑‑‑‑‑ ПЕЙЗАЖИ / АРХИТЕКТУРА ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
+  <section id="landscapes" class="section">
+    <h2>Пейзажи и архитектура</h2>
+    <div class="gallery">
+      <img src="p9.jpg" alt="Пейзаж 1">
+      <img src="p10.jpg" alt="Пейзаж 2">
+    </div>
+  </section>
+
+  <!--‑‑‑‑‑‑‑‑‑‑‑‑ ОТЗЫВЫ ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
+  <section id="reviews" class="section">
+    <h2>Отзывы</h2>
+    <form id="reviews-form">
+      <textarea id="review-text" placeholder="Оставьте отзыв анонимно..."></textarea>
+      <button type="button" onclick="addReview()">Отправить</button>
+    </form>
+    <ul id="reviews-list"></ul>
+  </section>
+</body>
   <!--‑‑ Раздел отзывов ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑>
   <section id="reviews" class="section">
     <h2>Отзывы</h2>
